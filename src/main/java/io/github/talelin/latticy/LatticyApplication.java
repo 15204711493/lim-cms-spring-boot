@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author pedro@TaleLin
  */
 @RestController
-@MapperScan(basePackages = {"io.github.talelin.latticy.mapper"})
+@MapperScan(basePackages = {"io.github.talelin.latticy.mapper","io.github.talelin.latticy.laver.mapper"})
 @SpringBootApplication(scanBasePackages = {"io.github.talelin.latticy"})
 public class LatticyApplication {
 

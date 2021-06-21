@@ -12,7 +12,7 @@ spring:
   web:
     resources:
       # 关闭默认静态资源的映射规则
-      add-mappings: false
+      add-mappings: true
 
 mybatis-plus:
   configuration:
@@ -28,7 +28,7 @@ mybatis-plus:
       logic-delete-value: NOW()
       logic-not-delete-value: 'NULL'
   # mapper路径位置
-  mapper-locations: classpath:mapper/*.xml
+  mapper-locations: classpath:mapper/*.xml, classpath:mapper/laver/*.xml
 
 
 lin:
