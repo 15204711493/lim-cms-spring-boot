@@ -19,6 +19,14 @@ lin:
     single-limit: 2MB
     # 本地文件保存位置
     store-dir: assets/
+#    qiniuyun:
+#      access-key: 1SJ-lIaSWH82siSU8_M1KsPZ-D35FVNbcMBOYhLP
+#      secret-key: 06wqXrmxSk3F9raTnBU5d9vOpm5aO9ipACkMwBKm
+#      bucket: wechatappletimage
+
+
+
+
 spring:
   servlet:
     multipart:
