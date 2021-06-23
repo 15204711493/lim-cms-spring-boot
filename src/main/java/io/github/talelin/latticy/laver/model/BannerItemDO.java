@@ -21,7 +21,7 @@ public class BannerItemDO {
     private String keyword;
     private Integer type;
     private String name;
-    private String bannerId;
+    private Integer bannerId;
 
     @JsonIgnore
     private Date createTime;
