@@ -14,9 +14,9 @@ public class SpuDetailDO extends SpuDO{
 
     private String defaultSkuTitle;
 
-    private List<String> bannerImgs;
+    private List<String> spuImgList;
 
-    private List<String> detailImgs;
+    private List<String> spuDetailImgList;
 
 
 

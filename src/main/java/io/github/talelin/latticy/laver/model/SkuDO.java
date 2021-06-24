@@ -44,6 +44,7 @@ public class SkuDO {
 
 //    @TableField(typeHandler = JacksonTypeHandler.class)
 //    private List<SpecKeyValueDO> specs;
+    private String specs;
 
     private String code;
 
@@ -53,7 +54,7 @@ public class SkuDO {
 
     private Integer rootCategoryId;
 
-    private String test;
+    //private String test;
 
 
 }

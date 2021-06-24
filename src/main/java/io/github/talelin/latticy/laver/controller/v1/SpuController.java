@@ -1,13 +1,19 @@
 package io.github.talelin.latticy.laver.controller.v1;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import io.github.talelin.core.annotation.GroupRequired;
+import io.github.talelin.core.annotation.PermissionMeta;
 import io.github.talelin.latticy.common.mybatis.Page;
 import io.github.talelin.latticy.common.util.PageUtil;
+import io.github.talelin.latticy.laver.dto.SpuDTO;
 import io.github.talelin.latticy.laver.model.BannerItemDO;
 import io.github.talelin.latticy.laver.model.SpuDO;
 import io.github.talelin.latticy.laver.model.SpuDetailDO;
 import io.github.talelin.latticy.laver.service.SpuService;
+import io.github.talelin.latticy.vo.CreatedVO;
+import io.github.talelin.latticy.vo.DeletedVO;
 import io.github.talelin.latticy.vo.PageResponseVO;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -44,4 +50,19 @@ public class SpuController {
     }
 
 
+    @PostMapping
+    public CreatedVO  createSpu(@RequestBody @Validated SpuDTO spuDTO){
+        SpuDO spuDO = new SpuDO();
+        BeanUtils.copyProperties(spuDTO,spuDO);
+        this.spuService.save(spuDO);
+        return  new CreatedVO();
+    }
+
+    @DeleteMapping("/{id}")
+    @PermissionMeta("删除SPU")
+    @GroupRequired
+    public DeletedVO delete(@PathVariable @Positive(message = "{id.positive}") Integer id) {
+        spuService.delete(id);
+        return new DeletedVO();
+    }
 }
