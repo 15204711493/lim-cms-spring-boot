@@ -1,5 +1,6 @@
 package io.github.talelin.latticy.laver.model;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import io.github.talelin.latticy.model.BaseModel;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -21,6 +22,7 @@ public class SpuDetailImgDO extends BaseModel {
 
     private Integer spuId;
 
+    @TableField(value = "`index`")
     private Integer index;
 
 
