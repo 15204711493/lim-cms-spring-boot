@@ -52,10 +52,9 @@ public class SpuController {
 
     @PostMapping
     public CreatedVO  createSpu(@RequestBody @Validated SpuDTO spuDTO){
-        SpuDO spuDO = new SpuDO();
-        BeanUtils.copyProperties(spuDTO,spuDO);
-        this.spuService.save(spuDO);
-        return  new CreatedVO();
+        this.spuService.create(spuDTO);
+        return new CreatedVO();
+
     }
 
     @DeleteMapping("/{id}")

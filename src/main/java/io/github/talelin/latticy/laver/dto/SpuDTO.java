@@ -9,8 +9,6 @@ import java.util.List;
 @Data
 public class SpuDTO {
 
-
-
     @NotBlank
     @Length(min = 1, max = 128)
     private String title;
